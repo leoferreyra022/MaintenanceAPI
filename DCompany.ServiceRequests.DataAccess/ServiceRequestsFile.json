@@ -1,0 +1,54 @@
+{
+  "ServiceRequests":[
+    {
+      "id": "7fdbd1e8-cbe3-4782-a25a-11b132b57edb",
+      "buildingCode": "COH",
+      "description": "Please turn up the AC in suite 1200D.",
+      "currentStatus": 1,
+      "createdBy": "Nik Patel",
+      "createdDate": "2019-08-01T11:25:43.511-03:00",
+      "lastModifiedBy": "Jane Doe",
+      "lastModifiedDate": "2019-08-01T12:01:23.511-03:00"
+    },
+    {
+      "id": "ea85a061-6a59-420c-bfae-daca2223c1c2",
+      "buildingCode": "DXC",
+      "description": "Please turn up the AC in suite 1200D.",
+      "currentStatus": 4,
+      "createdBy": "Nick Blue",
+      "createdDate": "2019-08-04T11:25:43.511-03:00",
+      "lastModifiedBy": "Matt Cox",
+      "lastModifiedDate": "2019-08-04T12:01:23.511-03:00"
+    },
+    {
+      "id": "9e4cd0b4-2389-405d-be99-e55452aac9b0",
+      "buildingCode": "XAS",
+      "description": "Please turn up the AC in suite 1200D.",
+      "currentStatus": 3,
+      "createdBy": "Ali Stout",
+      "createdDate": "2019-10-01T11:25:43.511-03:00",
+      "lastModifiedBy": "Amber Ale",
+      "lastModifiedDate": "2019-10-01T12:01:23.511-03:00"
+    },
+    {
+      "id": "5d45f9fd-b3e3-4c15-b0b7-67e3681c8d6c",
+      "buildingCode": "ASD",
+      "description": "Please turn up the AC in suite 1200D.",
+      "currentStatus": 2,
+      "createdBy": "Jhon Pilsener",
+      "createdDate": "2019-04-01T11:25:43.511-03:00",
+      "lastModifiedBy": "Mr Pink",
+      "lastModifiedDate": "2019-05-01T12:01:23.511-03:00"
+    },
+    {
+      "id": "1cd91b3c-cab9-46c3-92d9-ec21b8085cdb",
+      "buildingCode": "ROB",
+      "description": "Please turn up the AC in suite 1200D.",
+      "currentStatus": 0,
+      "createdBy": "Arnold Zoom",
+      "createdDate": "2020-08-01T11:25:43.511-03:00",
+      "lastModifiedBy": "Mr Robot",
+      "lastModifiedDate": "2020-08-01T12:01:23.511-03:00"
+    }
+  ]
+}
