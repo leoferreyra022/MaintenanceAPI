@@ -1,0 +1,8 @@
+C:\Users\Pablito\source\repos\DCompany.ServiceRequests.Models\bin\Debug\netcoreapp3.1\DCompany.ServiceRequests.Models.deps.json
+C:\Users\Pablito\source\repos\DCompany.ServiceRequests.Models\bin\Debug\netcoreapp3.1\DCompany.ServiceRequests.Models.dll
+C:\Users\Pablito\source\repos\DCompany.ServiceRequests.Models\bin\Debug\netcoreapp3.1\DCompany.ServiceRequests.Models.pdb
+C:\Users\Pablito\source\repos\DCompany.ServiceRequests.Models\obj\Debug\netcoreapp3.1\DCompany.ServiceRequests.Models.AssemblyInfoInputs.cache
+C:\Users\Pablito\source\repos\DCompany.ServiceRequests.Models\obj\Debug\netcoreapp3.1\DCompany.ServiceRequests.Models.AssemblyInfo.cs
+C:\Users\Pablito\source\repos\DCompany.ServiceRequests.Models\obj\Debug\netcoreapp3.1\DCompany.ServiceRequests.Models.csproj.CoreCompileInputs.cache
+C:\Users\Pablito\source\repos\DCompany.ServiceRequests.Models\obj\Debug\netcoreapp3.1\DCompany.ServiceRequests.Models.dll
+C:\Users\Pablito\source\repos\DCompany.ServiceRequests.Models\obj\Debug\netcoreapp3.1\DCompany.ServiceRequests.Models.pdb
