@@ -2,6 +2,7 @@
 using DCompany.ServiceRequests.API.Contracts.ServiceRequests.Response;
 using DCompany.ServiceRequests.API.Services;
 using DCompany.ServiceRequests.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -9,8 +10,8 @@ using static DCompany.ServiceRequests.Models.Enums.ServiceRequestStatusEnums;
 
 namespace DCompany.ServiceRequests.API.Controllers
 {
-    [ApiController]
     [Route("api/servicerequest")]
+    [ApiController]
     public class ServiceRequestsController : ControllerBase
     {
         private readonly IServiceRequestService _serviceRequestService;
@@ -20,7 +21,9 @@ namespace DCompany.ServiceRequests.API.Controllers
             _serviceRequestService = serviceRequestService;
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
             var result = await _serviceRequestService.GetByIdAsync(id);
@@ -34,6 +37,8 @@ namespace DCompany.ServiceRequests.API.Controllers
         }
 
         [HttpGet()]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> GetAll()
         {
             var resultList = await _serviceRequestService.GetAllAsync();
@@ -47,6 +52,9 @@ namespace DCompany.ServiceRequests.API.Controllers
         }
 
         [HttpPost()]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Create(
             [FromBody] CreateServiceRequestRequest createServiceRequestRequest)
         {
@@ -81,19 +89,26 @@ namespace DCompany.ServiceRequests.API.Controllers
                 CustomMessage = "Congrats! You added a new Service Request!"
             };
 
-            return Ok(response);
+            return CreatedAtAction(nameof(Create), response);
         }
 
-        [HttpPut("/{id}")]
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Update(
             [FromRoute] Guid id,
             [FromBody] UpdateServiceRequestRequest updateServiceRequestRequest)
         {
             if (id == null || updateServiceRequestRequest == null)
+            {
                 return BadRequest();
+            }
 
             if (!Enum.TryParse<CurrentStatusEnum>(updateServiceRequestRequest.Status, out var _))
+            {
                 return BadRequest();
+            }
 
             var user = "SwaggerUser";
             var serviceRequest = new ServiceRequestModel
@@ -107,20 +122,26 @@ namespace DCompany.ServiceRequests.API.Controllers
             };
 
             if (await _serviceRequestService.UpdateAsync(serviceRequest))
+            {
                 return Ok(serviceRequest);
+            }
 
             return NotFound();
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var deleted = await _serviceRequestService.DeleteByIdAsync(id);
 
             if (deleted)
-                return NoContent();
+            {
+                return NotFound();
+            }
 
-            return NotFound();
+            return Ok();
         }
     }
 }
